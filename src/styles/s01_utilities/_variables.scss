@@ -1,0 +1,112 @@
+// Variables SASS del sistema de diseño: de aquí se generan los tokens de
+// sistema `--mlt-sys-*` (ver s03_base/_system-tokens.scss).
+
+// Gamas de color, del tono 1 (oscuro) al 9 (claro). Paletas base de Tailwind 4.
+$colores: (
+  'negro': (#0a0a0a,),
+  'gris': (
+    #171717,
+    #262626,
+    #404040,
+    #525252,
+    #737373,
+    #a1a1a1,
+    #d4d4d4,
+    #e5e5e5,
+    #f5f5f5,
+  ),
+  'rojo': (
+    #82181a,
+    #9f0712,
+    #c10007,
+    #e7000b,
+    #fb2c36,
+    #ff6467,
+    #ffa2a2,
+    #ffc9c9,
+    #ffe2e2,
+  ),
+  'naranja': (
+    #7e2a0c,
+    #9f2d00,
+    #ca3500,
+    #f54900,
+    #ff6900,
+    #ff8904,
+    #ffb86a,
+    #ffd6a7,
+    #ffedd4,
+  ),
+  'verde': (
+    #0d542b,
+    #016630,
+    #008236,
+    #00a63e,
+    #00c950,
+    #05df72,
+    #7bf1a8,
+    #b9f8cf,
+    #dcfce7,
+  ),
+  'azul': (
+    #1c398e,
+    #193cb8,
+    #1447e6,
+    #155dfc,
+    #2b7fff,
+    #51a2ff,
+    #8ec5ff,
+    #bedbff,
+    #dbeafe,
+  ),
+  'blanco': (#ffffff,),
+);
+
+// Colores semánticos: cada uno apunta a una gama. Retemar = cambiar aquí.
+$colores-semanticos: (
+  'principal': 'azul',
+  'alternativo': 'naranja',
+  'peligroso': 'rojo',
+);
+
+// Anchuras máximas de contenedor.
+$anchuras: (
+  'contenido': 64rem,
+);
+
+// Breakpoints (móvil primero).
+$breakpoints: (
+  'tablet': 640px,
+  'desktop': 1024px,
+);
+
+// Escala tipográfica.
+$font-sizes: (
+  1: 0.875rem,
+  2: 1rem,
+  3: 1.125rem,
+  4: 1.25rem,
+  5: 1.5rem,
+  6: 2rem,
+  7: 2.75rem,
+);
+
+// Escala de espaciados.
+$espaciados: (
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 24px,
+  6: 32px,
+  7: 48px,
+  8: 64px,
+);
+
+// Escala de redondeos.
+$redondeos: (
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 999px,
+);

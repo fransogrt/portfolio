@@ -1,0 +1,45 @@
+// Tipografía base del sistema.
+
+@use '../s01_utilities/index' as utilidades;
+
+body {
+  font-family: var(--mlt-sys-font-principal);
+  font-size: utilidades.font-size(2);
+}
+
+h1 {
+  font-size: utilidades.font-size(7);
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: utilidades.font-size(5);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: utilidades.font-size(4);
+  line-height: 1.3;
+}
+
+h4,
+h5,
+h6 {
+  font-size: utilidades.font-size(3);
+}
+
+/* Iconos Material Symbols (self-hosted, paquete material-symbols). La clase
+   base la define el CSS del paquete; aquí solo el relleno del tema. */
+.material-symbols-rounded--relleno {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* Icono dentro de un botón de Material: centrado con el texto. */
+.mat-mdc-button-base .material-symbols-rounded {
+  font-size: 20px;
+  vertical-align: middle;
+}

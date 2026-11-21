@@ -1,0 +1,26 @@
+// Bloque hero (componente): cabecera destacada de la página de inicio.
+
+@use '../s01_utilities/index' as utilidades;
+
+.c-hero {
+  /* Tokens de diseño */
+  --hero-padding-vertical: utilidades.espacio(7);
+  --hero-texto-suave: var(--mlt-sys-texto-suave);
+
+  /* Propiedades CSS */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: utilidades.espacio(4);
+  padding-block: var(--hero-padding-vertical);
+
+  @include utilidades.desde(tablet) {
+    --hero-padding-vertical: utilidades.espacio(8);
+  }
+
+  &__presentacion {
+    max-width: 38rem;
+    color: var(--hero-texto-suave);
+    font-size: utilidades.font-size(3);
+  }
+}

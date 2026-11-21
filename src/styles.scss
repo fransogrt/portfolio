@@ -1,0 +1,34 @@
+// Punto de entrada de estilos: solo @use, en orden (s01_utilities no se carga
+// porque no genera CSS).
+
+@use './styles/s02_vendor';
+@use './styles/s03_base';
+@use './styles/s04_components';
+@use './styles/s05_layouts';
+@use './styles/s06_global';
+
+// Tema de Angular Material con las paletas generadas en s02_vendor/material.
+// Los tokens de Material usan light-dark(): el cambio claro/oscuro se hace
+// cambiando color-scheme en s03_base/_system-tokens.scss.
+@use '@angular/material' as mat;
+@use './styles/s02_vendor/material/theme-colors' as colores;
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: colores.$primary-palette,
+        tertiary: colores.$tertiary-palette,
+      ),
+      typography: 'Roboto Flex Variable',
+      density: 0,
+    )
+  );
+}
+
+body {
+  background-color: var(--mlt-sys-fondo);
+  color: var(--mlt-sys-texto);
+  font: var(--mat-sys-body-medium);
+  font-family: var(--mlt-sys-font-principal);
+}

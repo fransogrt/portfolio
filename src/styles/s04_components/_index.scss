@@ -1,0 +1,6 @@
+// Punto de entrada de s04_components: solo @forward.
+// c-hero: bloque CSS puro (se usa desde la página de inicio).
+// c-markdown: EXCEPCIÓN documentada (estilos globales del componente
+// app-markdown para su contenido [innerHTML]).
+@forward './c-hero';
+@forward './c-markdown';

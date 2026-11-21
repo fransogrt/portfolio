@@ -1,0 +1,91 @@
+// Bloque markdown: estilos del HTML generado por marked e inyectado con
+// [innerHTML].
+//
+// EXCEPCIÓN a la regla «CSS puro O componente Angular, nunca ambos»
+// (Sistema de Diseño - Estructura de carpetas): el bloque lo implementa el
+// componente app-markdown (shared/ui/components/markdown), pero sus estilos
+// viven aquí como CSS global porque los descendientes generados por
+// [innerHTML] no reciben la encapsulación de Angular y un .scss de componente
+// no les alcanzaría. Este fichero es la ÚNICA implementación del estilo del
+// bloque: el .scss del componente solo posiciona su :host.
+
+@use '../s01_utilities/index' as utilidades;
+
+.markdown {
+  display: flex;
+  flex-direction: column;
+  gap: utilidades.espacio(4);
+
+  h2,
+  h3,
+  h4 {
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: utilidades.font-size(5);
+  }
+
+  h3 {
+    font-size: utilidades.font-size(4);
+  }
+
+  p,
+  ul,
+  ol {
+    color: var(--mlt-sys-texto-suave);
+    max-width: 44rem;
+  }
+
+  ul,
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: utilidades.espacio(2);
+    padding-left: utilidades.espacio(5);
+  }
+
+  a {
+    color: var(--mlt-sys-color-principal-5);
+    text-decoration: underline;
+  }
+
+  code {
+    padding: utilidades.espacio(1) utilidades.espacio(2);
+    border-radius: utilidades.redondeo(1);
+    background-color: var(--mlt-sys-superficie);
+    font-size: 0.9em;
+  }
+
+  pre {
+    padding: utilidades.espacio(4);
+    border: 1px solid var(--mlt-sys-borde);
+    border-radius: utilidades.redondeo(2);
+    background-color: var(--mlt-sys-superficie);
+    overflow-x: auto;
+
+    code {
+      padding: 0;
+      background: none;
+    }
+  }
+
+  blockquote {
+    padding-left: utilidades.espacio(4);
+    border-left: 4px solid var(--mlt-sys-color-principal-5);
+    color: var(--mlt-sys-texto-suave);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--mlt-sys-borde);
+  }
+
+  &__error {
+    color: var(--mlt-sys-color-peligroso-5);
+  }
+
+  &__cargando {
+    color: var(--mlt-sys-texto-suave);
+  }
+}

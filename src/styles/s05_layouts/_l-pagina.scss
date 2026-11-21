@@ -1,0 +1,16 @@
+// Layout página: contenedor centrado con ancho máximo.
+
+@use '../s01_utilities/index' as utilidades;
+
+.l-pagina {
+  /* Tokens de diseño */
+  --pagina-anchura: utilidades.anchura('contenido');
+  --pagina-padding-inline: utilidades.espacio(5);
+  --pagina-padding-block: utilidades.espacio(6);
+
+  /* Propiedades CSS */
+  width: 100%;
+  max-width: var(--pagina-anchura);
+  margin-inline: auto;
+  padding: var(--pagina-padding-block) var(--pagina-padding-inline);
+}

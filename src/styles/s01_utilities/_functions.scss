@@ -1,0 +1,26 @@
+// Funciones del sistema: atajos tipados para leer tokens de sistema.
+// Los tokens se generan en s03_base/_system-tokens.scss.
+
+@function color($gama, $tono) {
+  @return var(--mlt-sys-color-#{$gama}-#{$tono});
+}
+
+@function color-semantico($nombre, $tono) {
+  @return var(--mlt-sys-color-#{$nombre}-#{$tono});
+}
+
+@function font-size($numero) {
+  @return var(--mlt-sys-font-size-#{$numero});
+}
+
+@function espacio($numero) {
+  @return var(--mlt-sys-espacio-#{$numero});
+}
+
+@function redondeo($numero) {
+  @return var(--mlt-sys-redondeo-#{$numero});
+}
+
+@function anchura($nombre) {
+  @return var(--mlt-sys-anchura-#{$nombre});
+}

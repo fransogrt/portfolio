@@ -1,0 +1,10 @@
+// Mixins del sistema: queries responsive desde $breakpoints (móvil primero).
+
+@use 'sass:map';
+@use './variables';
+
+@mixin desde($nombre) {
+  @media (min-width: map.get(variables.$breakpoints, $nombre)) {
+    @content;
+  }
+}

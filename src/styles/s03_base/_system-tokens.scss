@@ -1,0 +1,71 @@
+// Tokens de sistema del portfolio (`--mlt-sys-*`), generados con bucles desde
+// s01_utilities. El tema claro es el :root por defecto; el oscuro llega con el
+// atributo `data-tema='oscuro'` que aplica TemaService (y el script de
+// index.html antes del primer pintado).
+
+@use 'sass:list';
+@use 'sass:map';
+@use '../s01_utilities/index' as utilidades;
+
+:root {
+  /* Cada tono de cada gama se convierte en un token de sistema */
+  @each $nombre, $tonos in utilidades.$colores {
+    @for $i from 1 through list.length($tonos) {
+      --mlt-sys-color-#{$nombre}-#{$i}: #{list.nth($tonos, $i)};
+    }
+  }
+
+  /* Cada tono de un color semántico apunta al mismo tono de su gama */
+  @each $nombre, $gama in utilidades.$colores-semanticos {
+    @for $i from 1 through list.length(map.get(utilidades.$colores, $gama)) {
+      --mlt-sys-color-#{$nombre}-#{$i}: var(--mlt-sys-color-#{$gama}-#{$i});
+    }
+  }
+
+  /* Escalas generadas */
+  @each $nombre, $valor in utilidades.$anchuras {
+    --mlt-sys-anchura-#{$nombre}: #{$valor};
+  }
+  @each $numero, $valor in utilidades.$font-sizes {
+    --mlt-sys-font-size-#{$numero}: #{$valor};
+  }
+  @each $numero, $valor in utilidades.$espaciados {
+    --mlt-sys-espacio-#{$numero}: #{$valor};
+  }
+  @each $numero, $valor in utilidades.$redondeos {
+    --mlt-sys-redondeo-#{$numero}: #{$valor};
+  }
+
+  /* Tipografía */
+  --mlt-sys-font-principal: 'Roboto Flex Variable', 'Roboto Flex', system-ui, sans-serif;
+
+  /* Tema claro: superficies y texto sobre la escala de gris */
+  --mlt-sys-fondo: var(--mlt-sys-color-blanco-1);
+  --mlt-sys-superficie: var(--mlt-sys-color-gris-9);
+  --mlt-sys-texto: var(--mlt-sys-color-gris-1);
+  --mlt-sys-texto-suave: var(--mlt-sys-color-gris-5);
+  --mlt-sys-borde: var(--mlt-sys-color-gris-7);
+}
+
+[data-tema='oscuro'] {
+  /* Tema oscuro: solo cambian las superficies y los textos */
+  --mlt-sys-fondo: var(--mlt-sys-color-negro-1);
+  --mlt-sys-superficie: var(--mlt-sys-color-gris-2);
+  --mlt-sys-texto: var(--mlt-sys-color-gris-9);
+  --mlt-sys-texto-suave: var(--mlt-sys-color-gris-6);
+  --mlt-sys-borde: var(--mlt-sys-color-gris-4);
+
+  /* En fondo oscuro, el hover del principal baja al tono más oscuro */
+  --mlt-sys-color-principal-4-hover: var(--mlt-sys-color-principal-6);
+}
+
+/* El interruptor de tema funciona cambiando color-scheme: como mat.theme
+   genera los tokens de Material con light-dark(), con este cambio se reteman
+   todos los componentes de Material a la vez. */
+:root {
+  color-scheme: light;
+}
+
+[data-tema='oscuro'] {
+  color-scheme: dark;
+}

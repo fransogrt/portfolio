@@ -1,0 +1,14 @@
+// Layout acciones: fila de botones / CTA.
+
+@use '../s01_utilities/index' as utilidades;
+
+.l-acciones {
+  /* Tokens de diseño */
+  --acciones-gap: utilidades.espacio(3);
+
+  /* Propiedades CSS */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--acciones-gap);
+}

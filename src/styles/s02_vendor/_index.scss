@@ -1,0 +1,5 @@
+// Librerías de terceros. Angular Material va en material/.
+//
+// Según la convención de la bóveda, `_theme-colors.scss` NO va aquí: lo carga
+// directamente `src/styles.scss` debajo de nuestros @use. Este índice queda
+// vacío mientras no haya otra librería de CSS.

@@ -1,0 +1,5 @@
+// Punto de entrada de s05_layouts: solo @forward.
+// Solo bloques CSS puros: l-cabecera y l-pie viven en sus componentes
+// (shared/ui/components/cabecera y pie).
+@forward './l-pagina';
+@forward './l-acciones';
