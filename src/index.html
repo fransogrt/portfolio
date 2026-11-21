@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Francisco Ogallar</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio de Francisco Ogallar, desarrollador full-stack de JavaScript y TypeScript. Proyectos, formación y contacto."
+    />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      // Aplica el tema guardado antes del primer pintado para evitar el destello.
+      try {
+        var guardado = localStorage.getItem('portfolio-tema');
+        var tema =
+          guardado === 'claro' || guardado === 'oscuro'
+            ? guardado
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'oscuro'
+              : 'claro';
+        document.documentElement.setAttribute('data-tema', tema);
+      } catch {
+        // Sin localStorage disponible: se queda el tema claro por defecto.
+      }
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

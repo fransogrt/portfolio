@@ -1,0 +1,12 @@
+// El shell apila cabecera, contenido y pie ocupando toda la altura; el estilo
+// de cada pieza vive en sus bloques l- de src/styles.
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
