@@ -27,7 +27,11 @@ html {
 }
 
 body {
-  background-color: var(--mlt-sys-fondo);
+  background:
+    radial-gradient(circle at 12% -10%, var(--mlt-sys-resplandor), transparent 25rem),
+    radial-gradient(circle at 92% 18%, var(--mlt-sys-resplandor), transparent 22rem),
+    var(--mlt-sys-fondo);
+  background-attachment: fixed;
   color: var(--mlt-sys-texto);
   font: var(--mat-sys-body-medium);
   font-family: var(--mlt-sys-font-principal);

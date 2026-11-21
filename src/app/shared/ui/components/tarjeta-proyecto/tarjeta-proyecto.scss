@@ -4,13 +4,13 @@
 
 .c-tarjeta {
   /* Tokens de diseño: decisiones del diseñador */
-  --tarjeta-fondo: var(--mlt-sys-superficie);
+  --tarjeta-fondo: var(--mlt-sys-superficie-elevada);
   --tarjeta-borde: var(--mlt-sys-borde);
   --tarjeta-borde-hover: var(--mlt-sys-color-principal-5);
   --tarjeta-texto-suave: var(--mlt-sys-texto-suave);
   --tarjeta-color-etiqueta: var(--mlt-sys-color-principal-5);
   --tarjeta-padding: var(--mlt-sys-espacio-5);
-  --tarjeta-redondeo: var(--mlt-sys-redondeo-3);
+  --tarjeta-redondeo: 1.1rem;
 
   /* Propiedades CSS: solo tokens */
   display: flex;
@@ -20,10 +20,17 @@
   border: 1px solid var(--tarjeta-borde);
   border-radius: var(--tarjeta-redondeo);
   background-color: var(--tarjeta-fondo);
-  transition: border-color 150ms ease;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  overflow: hidden;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 
   &:hover {
     border-color: var(--tarjeta-borde-hover);
+    box-shadow: var(--mlt-sys-sombra);
+    transform: translateY(-4px);
   }
 
   &__cabecera {
@@ -47,6 +54,9 @@
   }
 
   &__estado {
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--tarjeta-borde);
+    border-radius: var(--mlt-sys-redondeo-4);
     color: var(--tarjeta-texto-suave);
     font-size: var(--mlt-sys-font-size-1);
     white-space: nowrap;
@@ -65,9 +75,10 @@
   }
 
   &__etiqueta {
-    padding: var(--mlt-sys-espacio-1) var(--mlt-sys-espacio-2);
-    border: 1px solid var(--tarjeta-borde);
+    padding: 0.3rem 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--tarjeta-color-etiqueta) 20%, transparent);
     border-radius: var(--mlt-sys-redondeo-4);
+    background-color: color-mix(in srgb, var(--tarjeta-color-etiqueta) 8%, transparent);
     color: var(--tarjeta-color-etiqueta);
     font-size: var(--mlt-sys-font-size-1);
   }

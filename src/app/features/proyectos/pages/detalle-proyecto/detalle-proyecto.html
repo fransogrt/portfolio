@@ -1,17 +1,25 @@
 @if (proyecto(); as proyectoActual) {
-  <section>
-    <h1>{{ proyectoActual.titulo }}</h1>
-    <p class="detalle-proyecto__estado">{{ proyectoActual.estado }}</p>
-    @if (proyectoActual.produccion) {
-      <p class="detalle-proyecto__produccion">{{ proyectoActual.produccion }}</p>
-    }
-    <app-markdown [ruta]="'proyectos/' + proyectoActual.slug + '.md'" />
+  <section class="detalle-proyecto">
+    <header class="c-pagina-cabecera detalle-proyecto__cabecera">
+      <p class="c-pagina-cabecera__ceja">Caso de estudio</p>
+      <div class="detalle-proyecto__titulo">
+        <h1>{{ proyectoActual.titulo }}</h1>
+        <p class="detalle-proyecto__estado">{{ proyectoActual.estado }}</p>
+      </div>
+      <p class="c-pagina-cabecera__descripcion">{{ proyectoActual.resumen }}</p>
+      @if (proyectoActual.produccion) {
+        <p class="detalle-proyecto__produccion">{{ proyectoActual.produccion }}</p>
+      }
+    </header>
+    <div class="detalle-proyecto__contenido">
+      <app-markdown [ruta]="'proyectos/' + proyectoActual.slug + '.md'" />
+    </div>
     <div class="l-acciones detalle-proyecto__volver">
       <a matButton="outlined" routerLink="/proyectos">Volver a proyectos</a>
     </div>
   </section>
 } @else {
-  <section>
+  <section class="detalle-proyecto detalle-proyecto--no-encontrado">
     <h1>Proyecto no encontrado</h1>
     <p>No hay ningún proyecto en la ruta «{{ slug() }}».</p>
     <div class="l-acciones detalle-proyecto__volver">

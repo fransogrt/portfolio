@@ -1,25 +1,45 @@
 <section class="c-hero">
-  <h1>Hola, soy <span class="g--color-destaque">Francisco Ogallar</span>.</h1>
-  <p class="c-hero__presentacion">
-    Desarrollador full-stack de JavaScript y TypeScript. Construyo aplicaciones web de principio a
-    fin: la interfaz, la lógica y el despliegue.
-  </p>
-  <div class="l-acciones">
-    <a matButton="filled" [href]="'mailto:' + perfil.email">Contactarme</a>
-    <a matButton="outlined" routerLink="/proyectos">Ver proyectos</a>
+  <div class="c-hero__contenido">
+    <p class="c-hero__ceja">Portfolio · Desarrollo web</p>
+    <h1>Hola, soy <span class="g--color-destaque">Francisco Ogallar</span>.</h1>
+    <p class="c-hero__presentacion">
+      Desarrollador full-stack de JavaScript y TypeScript. Construyo aplicaciones web de principio
+      a fin: la interfaz, la lógica y el despliegue.
+    </p>
+    <div class="l-acciones">
+      <a matButton="filled" [href]="'mailto:' + perfil.email">Hablemos</a>
+      <a matButton="outlined" routerLink="/proyectos">Ver proyectos</a>
+    </div>
   </div>
+  <aside class="c-hero__ficha" aria-label="Especialidades">
+    <p class="c-hero__ficha-titulo">Trabajo de principio a fin</p>
+    <dl class="c-hero__datos">
+      <div><dt>Interfaces</dt><dd>Angular</dd></div>
+      <div><dt>Lógica</dt><dd>TypeScript · JavaScript</dd></div>
+      <div><dt>Entrega</dt><dd>Docker · Autohospedaje</dd></div>
+    </dl>
+  </aside>
 </section>
 
-<section aria-labelledby="proyectos-destacados">
-  <h2 id="proyectos-destacados">Proyectos destacados</h2>
-  <div>
+<section class="inicio__seccion" aria-labelledby="proyectos-destacados">
+  <header class="inicio__cabecera-seccion">
+    <div>
+      <p class="inicio__ceja">Trabajo seleccionado</p>
+      <h2 id="proyectos-destacados">Proyectos destacados</h2>
+    </div>
+    <a class="inicio__enlace" routerLink="/proyectos">Ver todos <span aria-hidden="true">↗</span></a>
+  </header>
+  <div class="inicio__rejilla-proyectos">
     @for (proyecto of proyectosDestacados; track proyecto.slug) {
       <app-tarjeta-proyecto [proyecto]="proyecto" />
     }
   </div>
 </section>
 
-<section aria-labelledby="quien-soy">
-  <h2 id="quien-soy">Quién soy</h2>
+<section class="inicio__presentacion" aria-labelledby="quien-soy">
+  <div class="inicio__introduccion">
+    <p class="inicio__ceja">Un poco más</p>
+    <h2 id="quien-soy">Tecnología con una mirada práctica.</h2>
+  </div>
   <app-markdown ruta="secciones/inicio.md" />
 </section>

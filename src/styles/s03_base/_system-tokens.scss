@@ -45,6 +45,9 @@
   --mlt-sys-texto: var(--mlt-sys-color-gris-1);
   --mlt-sys-texto-suave: var(--mlt-sys-color-gris-5);
   --mlt-sys-borde: var(--mlt-sys-color-gris-7);
+  --mlt-sys-superficie-elevada: rgba(255, 255, 255, 0.82);
+  --mlt-sys-sombra: 0 18px 40px rgba(23, 57, 142, 0.1);
+  --mlt-sys-resplandor: rgba(43, 127, 255, 0.13);
 }
 
 [data-tema='oscuro'] {
@@ -54,6 +57,9 @@
   --mlt-sys-texto: var(--mlt-sys-color-gris-9);
   --mlt-sys-texto-suave: var(--mlt-sys-color-gris-6);
   --mlt-sys-borde: var(--mlt-sys-color-gris-4);
+  --mlt-sys-superficie-elevada: rgba(38, 38, 38, 0.82);
+  --mlt-sys-sombra: 0 18px 40px rgba(0, 0, 0, 0.28);
+  --mlt-sys-resplandor: rgba(43, 127, 255, 0.16);
 
   /* En fondo oscuro, el hover del principal baja al tono más oscuro */
   --mlt-sys-color-principal-4-hover: var(--mlt-sys-color-principal-6);

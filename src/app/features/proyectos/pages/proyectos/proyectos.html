@@ -1,10 +1,18 @@
-<section>
-  <h1>Proyectos</h1>
-  <p>Mis proyectos destacados. Cada uno tiene su página de detalle con qué es y cómo está hecho.</p>
-  <div>
+<section class="proyectos">
+  <header class="c-pagina-cabecera">
+    <p class="c-pagina-cabecera__ceja">Selección de trabajo</p>
+    <h1>Proyectos</h1>
+    <p class="c-pagina-cabecera__descripcion">
+      Proyectos construidos para usarlos: cada uno explica el problema, las decisiones técnicas y
+      cómo está hecho.
+    </p>
+  </header>
+  <div class="proyectos__rejilla">
     @for (proyecto of proyectos; track proyecto.slug) {
       <app-tarjeta-proyecto [proyecto]="proyecto" />
     }
   </div>
-  <app-markdown ruta="secciones/proyectos.md" />
+  <div class="proyectos__contexto">
+    <app-markdown ruta="secciones/proyectos.md" />
+  </div>
 </section>

@@ -1,21 +1,30 @@
-<section>
-  <h1>Contacto</h1>
-  <app-markdown ruta="secciones/contacto.md" />
-</section>
+<section class="contacto">
+  <header class="c-pagina-cabecera">
+    <p class="c-pagina-cabecera__ceja">Contacto</p>
+    <h1>¿Hablamos?</h1>
+    <p class="c-pagina-cabecera__descripcion">
+      Si crees que podemos construir algo interesante juntos, estaré encantado de conocerte.
+    </p>
+  </header>
 
-<section aria-labelledby="canales">
-  <h2 id="canales">Canales</h2>
-  <div class="l-acciones">
-    <a matButton="filled" [href]="'mailto:' + perfil.email">
-      <span class="material-symbols-rounded" aria-hidden="true">mail</span>
-      Contactarme
-    </a>
-    <a matButton="outlined" [href]="perfil.github" target="_blank" rel="noopener noreferrer">
-      GitHub
-    </a>
-    <a matButton="outlined" [href]="perfil.linkedin" target="_blank" rel="noopener noreferrer">
-      LinkedIn
-    </a>
+  <div class="contacto__contenido">
+    <app-markdown ruta="secciones/contacto.md" />
+    <aside class="contacto__canales" aria-labelledby="canales">
+      <p class="contacto__ceja">Escríbeme</p>
+      <h2 id="canales">Canales directos</h2>
+      <div class="l-acciones">
+        <a matButton="filled" [href]="'mailto:' + perfil.email">
+          <span class="material-symbols-rounded" aria-hidden="true">mail</span>
+          Contactarme
+        </a>
+        <a matButton="outlined" [href]="perfil.github" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a matButton="outlined" [href]="perfil.linkedin" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
+      <p class="contacto__email">{{ perfil.email }}</p>
+    </aside>
   </div>
-  <p class="contacto__email">{{ perfil.email }}</p>
 </section>

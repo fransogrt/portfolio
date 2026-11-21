@@ -1,0 +1,26 @@
+// Cabecera editorial compartida por las páginas internas.
+
+@use '../s01_utilities/index' as utilidades;
+
+.c-pagina-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: utilidades.espacio(3);
+  max-width: 46rem;
+  padding-block: clamp(2rem, 6vw, 4.5rem) utilidades.espacio(6);
+  border-bottom: 1px solid var(--mlt-sys-borde);
+
+  &__ceja {
+    color: var(--mlt-sys-color-principal-5);
+    font-size: 0.75rem;
+    font-weight: 720;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  &__descripcion {
+    color: var(--mlt-sys-texto-suave);
+    font-size: clamp(1.0625rem, 2vw, 1.2rem);
+    line-height: 1.65;
+  }
+}

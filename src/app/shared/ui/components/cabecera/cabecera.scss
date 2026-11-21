@@ -3,7 +3,7 @@
 
 .l-cabecera {
   /* Tokens de diseño */
-  --cabecera-fondo: var(--mlt-sys-fondo);
+  --cabecera-fondo: var(--mlt-sys-superficie-elevada);
   --cabecera-borde: var(--mlt-sys-borde);
   --cabecera-texto-enlace: var(--mlt-sys-texto-suave);
 
@@ -16,13 +16,17 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--mlt-sys-espacio-3) var(--mlt-sys-espacio-4);
-  padding: var(--mlt-sys-espacio-3) var(--mlt-sys-espacio-5);
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: var(--mlt-sys-espacio-3) clamp(1.5rem, 4vw, 3rem);
   background-color: var(--cabecera-fondo);
+  backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--cabecera-borde);
 
   &__marca {
     color: var(--mlt-sys-texto);
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: -0.035em;
   }
 
   &__zona {
@@ -39,7 +43,23 @@
   }
 
   &__enlace {
+    position: relative;
     color: var(--cabecera-texto-enlace);
+    font-size: var(--mlt-sys-font-size-1);
+    font-weight: 520;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -0.45rem;
+      left: 0;
+      height: 2px;
+      border-radius: 999px;
+      background-color: var(--mlt-sys-color-principal-5);
+      content: '';
+      transform: scaleX(0);
+      transition: transform 180ms ease;
+    }
 
     &:hover {
       color: var(--mlt-sys-texto);
@@ -48,6 +68,10 @@
     &--activa {
       color: var(--mlt-sys-color-principal-5);
       font-weight: 600;
+
+      &::after {
+        transform: scaleX(1);
+      }
     }
   }
 }

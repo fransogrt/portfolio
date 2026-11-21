@@ -4,13 +4,17 @@
 
 .l-pagina {
   /* Tokens de diseño */
-  --pagina-anchura: utilidades.anchura('contenido');
-  --pagina-padding-inline: utilidades.espacio(5);
-  --pagina-padding-block: utilidades.espacio(6);
+  --pagina-anchura: 70rem;
+  --pagina-padding-inline: #{utilidades.espacio(5)};
+  --pagina-padding-block: #{utilidades.espacio(6)};
 
   /* Propiedades CSS */
   width: 100%;
   max-width: var(--pagina-anchura);
   margin-inline: auto;
-  padding: var(--pagina-padding-block) var(--pagina-padding-inline);
+  padding: var(--pagina-padding-block) var(--pagina-padding-inline) utilidades.espacio(8);
+
+  @include utilidades.desde(tablet) {
+    --pagina-padding-block: #{utilidades.espacio(8)};
+  }
 }

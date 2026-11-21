@@ -4,23 +4,95 @@
 
 .c-hero {
   /* Tokens de diseño */
-  --hero-padding-vertical: utilidades.espacio(7);
+  --hero-padding-vertical: clamp(4.5rem, 11vw, 8rem);
   --hero-texto-suave: var(--mlt-sys-texto-suave);
 
   /* Propiedades CSS */
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: utilidades.espacio(4);
+  align-items: center;
+  gap: clamp(2rem, 8vw, 7rem);
   padding-block: var(--hero-padding-vertical);
+  position: relative;
+  isolation: isolate;
 
   @include utilidades.desde(tablet) {
-    --hero-padding-vertical: utilidades.espacio(8);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &::before {
+    position: absolute;
+    top: 18%;
+    left: -1.5rem;
+    width: 3rem;
+    height: 0.35rem;
+    border-radius: utilidades.redondeo(4);
+    background: linear-gradient(90deg, var(--mlt-sys-color-principal-5), var(--mlt-sys-color-alternativo-5));
+    content: '';
+  }
+
+  &__contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: utilidades.espacio(4);
+    max-width: 44rem;
+  }
+
+  &__ceja {
+    color: var(--mlt-sys-color-principal-5);
+    font-size: 0.75rem;
+    font-weight: 720;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
 
   &__presentacion {
-    max-width: 38rem;
+    max-width: 42rem;
     color: var(--hero-texto-suave);
+    font-size: clamp(1.125rem, 2vw, 1.35rem);
+    line-height: 1.65;
+  }
+
+  &__ficha {
+    width: min(100%, 19rem);
+    padding: utilidades.espacio(5);
+    border: 1px solid var(--mlt-sys-borde);
+    border-radius: 1.1rem;
+    background: var(--mlt-sys-superficie-elevada);
+    box-shadow: var(--mlt-sys-sombra);
+  }
+
+  &__ficha-titulo {
+    margin-bottom: utilidades.espacio(4);
     font-size: utilidades.font-size(3);
+    font-weight: 650;
+    letter-spacing: -0.025em;
+  }
+
+  &__datos {
+    display: flex;
+    flex-direction: column;
+    gap: utilidades.espacio(3);
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      gap: utilidades.espacio(3);
+      padding-top: utilidades.espacio(3);
+      border-top: 1px solid var(--mlt-sys-borde);
+    }
+
+    dt {
+      color: var(--mlt-sys-texto-suave);
+      font-size: utilidades.font-size(1);
+    }
+
+    dd {
+      font-size: utilidades.font-size(1);
+      font-weight: 620;
+      text-align: right;
+    }
   }
 }

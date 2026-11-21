@@ -2,9 +2,18 @@
   display: block;
 }
 
-section div {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: var(--mlt-sys-espacio-5);
-  margin-top: var(--mlt-sys-espacio-5);
+.proyectos {
+  &__rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+    gap: var(--mlt-sys-espacio-5);
+    margin-top: var(--mlt-sys-espacio-6);
+  }
+
+  &__contexto {
+    max-width: 48rem;
+    margin-top: clamp(5rem, 10vw, 8rem);
+    padding-top: var(--mlt-sys-espacio-7);
+    border-top: 1px solid var(--mlt-sys-borde);
+  }
 }
