@@ -9,10 +9,15 @@ echo "==> Parando el contenedor anterior..."
 docker compose down
 
 echo "==> Build de la imagen..."
-# --network=host: esquina el bridge de Docker mientras su NAT de salida esté roto.
-# Cuando lo arregles (sudo systemctl restart docker), puedes sustituir esta línea
-# por: docker compose build
-docker build --network=host -t portfolio:latest .
+# Sonda: ¿los contenedores salen a internet por el bridge?
+# (docker pull lo hace el daemon con red del host, así que la sonda funciona siempre)
+if docker run --rm busybox:latest wget -q -T 5 -O /dev/null http://1.1.1.1/ 2>/dev/null; then
+    echo "    bridge OK → docker compose build"
+    docker compose build
+else
+    echo "    bridge sin salida → build con --network=host (workaround)"
+    docker build --network=host -t portfolio:latest .
+fi
 
 echo "==> Arrancando en 127.0.0.1:18081..."
 docker compose up -d --no-build
