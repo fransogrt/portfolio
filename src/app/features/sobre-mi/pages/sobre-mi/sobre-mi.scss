@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+section:not(:first-of-type) {
+  margin-top: var(--mlt-sys-espacio-7);
+}
+
+section div {
+  margin-block: var(--mlt-sys-espacio-4);
+}
+
+section p {
+  color: var(--mlt-sys-texto-suave);
+  max-width: 44rem;
+}

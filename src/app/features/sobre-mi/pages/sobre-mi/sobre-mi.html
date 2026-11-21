@@ -1,0 +1,21 @@
+<section>
+  <h1>Sobre mí</h1>
+  <app-markdown ruta="secciones/sobre-mi.md" />
+</section>
+
+<section aria-labelledby="cv">
+  <h2 id="cv">Currículum</h2>
+  <div class="l-acciones">
+    @if (perfil.cv.disponible) {
+      <a matButton="filled" [href]="perfil.cv.ruta" download>Descargar CV (PDF)</a>
+    } @else {
+      <button matButton="filled" disabled type="button">Descargar CV (PDF)</button>
+    }
+  </div>
+  @if (!perfil.cv.disponible) {
+    <p>
+      El PDF del currículum todavía no está publicado. En cuanto lo esté, se descargará desde aquí
+      sin enlaces rotos.
+    </p>
+  }
+</section>

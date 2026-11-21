@@ -1,0 +1,10 @@
+<section>
+  <h1>Proyectos</h1>
+  <p>Mis proyectos destacados. Cada uno tiene su página de detalle con qué es y cómo está hecho.</p>
+  <div>
+    @for (proyecto of proyectos; track proyecto.slug) {
+      <app-tarjeta-proyecto [proyecto]="proyecto" />
+    }
+  </div>
+  <app-markdown ruta="secciones/proyectos.md" />
+</section>

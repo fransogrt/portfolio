@@ -1,0 +1,21 @@
+@if (proyecto(); as proyectoActual) {
+  <section>
+    <h1>{{ proyectoActual.titulo }}</h1>
+    <p class="detalle-proyecto__estado">{{ proyectoActual.estado }}</p>
+    @if (proyectoActual.produccion) {
+      <p class="detalle-proyecto__produccion">{{ proyectoActual.produccion }}</p>
+    }
+    <app-markdown [ruta]="'proyectos/' + proyectoActual.slug + '.md'" />
+    <div class="l-acciones detalle-proyecto__volver">
+      <a matButton="outlined" routerLink="/proyectos">Volver a proyectos</a>
+    </div>
+  </section>
+} @else {
+  <section>
+    <h1>Proyecto no encontrado</h1>
+    <p>No hay ningún proyecto en la ruta «{{ slug() }}».</p>
+    <div class="l-acciones detalle-proyecto__volver">
+      <a matButton="filled" routerLink="/proyectos">Ver proyectos</a>
+    </div>
+  </section>
+}

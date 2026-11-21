@@ -1,0 +1,25 @@
+<section class="c-hero">
+  <h1>Hola, soy <span class="g--color-destaque">Francisco Ogallar</span>.</h1>
+  <p class="c-hero__presentacion">
+    Desarrollador full-stack de JavaScript y TypeScript. Construyo aplicaciones web de principio a
+    fin: la interfaz, la lógica y el despliegue.
+  </p>
+  <div class="l-acciones">
+    <a matButton="filled" [href]="'mailto:' + perfil.email">Contactarme</a>
+    <a matButton="outlined" routerLink="/proyectos">Ver proyectos</a>
+  </div>
+</section>
+
+<section aria-labelledby="proyectos-destacados">
+  <h2 id="proyectos-destacados">Proyectos destacados</h2>
+  <div>
+    @for (proyecto of proyectosDestacados; track proyecto.slug) {
+      <app-tarjeta-proyecto [proyecto]="proyecto" />
+    }
+  </div>
+</section>
+
+<section aria-labelledby="quien-soy">
+  <h2 id="quien-soy">Quién soy</h2>
+  <app-markdown ruta="secciones/inicio.md" />
+</section>

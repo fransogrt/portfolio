@@ -1,0 +1,17 @@
+// La página no añade clases: los bloques identitarios van en src/styles y el
+// resto se resuelve con selectores de elemento encapsulados por Angular.
+
+:host {
+  display: block;
+}
+
+section:not(:first-of-type) {
+  margin-top: var(--mlt-sys-espacio-7);
+}
+
+section div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: var(--mlt-sys-espacio-5);
+  margin-top: var(--mlt-sys-espacio-5);
+}
