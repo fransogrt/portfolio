@@ -1,0 +1,17 @@
+<footer class="l-pie">
+  <div class="l-pie__enlaces">
+    <a class="l-pie__enlace" [href]="perfil.github" target="_blank" rel="noopener noreferrer">
+      <span class="material-symbols-rounded" aria-hidden="true">code</span>
+      GitHub
+    </a>
+    <a class="l-pie__enlace" [href]="perfil.linkedin" target="_blank" rel="noopener noreferrer">
+      <span class="material-symbols-rounded" aria-hidden="true">work</span>
+      LinkedIn
+    </a>
+    <a class="l-pie__enlace" [href]="'mailto:' + perfil.email">
+      <span class="material-symbols-rounded" aria-hidden="true">mail</span>
+      Email
+    </a>
+  </div>
+  <p>© {{ anio }} {{ perfil.nombre }} — hecho con Angular, prerenderizado estático.</p>
+</footer>

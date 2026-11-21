@@ -1,0 +1,38 @@
+// Estilos del bloque l-pie: la implementación del bloque es este componente,
+// así que sus estilos viven aquí, no como bloque global.
+
+.l-pie {
+  /* Tokens de diseño */
+  --pie-fondo: var(--mlt-sys-superficie);
+  --pie-texto: var(--mlt-sys-texto-suave);
+
+  /* Propiedades CSS */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mlt-sys-espacio-3);
+  margin-top: auto;
+  padding: var(--mlt-sys-espacio-6) var(--mlt-sys-espacio-5);
+  background-color: var(--pie-fondo);
+  border-top: 1px solid var(--mlt-sys-borde);
+  color: var(--pie-texto);
+  font-size: var(--mlt-sys-font-size-1);
+
+  &__enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mlt-sys-espacio-4);
+  }
+
+  &__enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mlt-sys-espacio-2);
+    color: var(--mlt-sys-texto);
+
+    &:hover {
+      color: var(--mlt-sys-color-principal-5);
+    }
+  }
+}

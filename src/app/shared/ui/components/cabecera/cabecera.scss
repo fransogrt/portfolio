@@ -1,0 +1,53 @@
+// Estilos del bloque c-cabecera (l-cabecera): la implementación del bloque es
+// este componente, así que sus estilos viven aquí, no como bloque global.
+
+.l-cabecera {
+  /* Tokens de diseño */
+  --cabecera-fondo: var(--mlt-sys-fondo);
+  --cabecera-borde: var(--mlt-sys-borde);
+  --cabecera-texto-enlace: var(--mlt-sys-texto-suave);
+
+  /* Propiedades CSS */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--mlt-sys-espacio-3) var(--mlt-sys-espacio-4);
+  padding: var(--mlt-sys-espacio-3) var(--mlt-sys-espacio-5);
+  background-color: var(--cabecera-fondo);
+  border-bottom: 1px solid var(--cabecera-borde);
+
+  &__marca {
+    color: var(--mlt-sys-texto);
+    font-weight: 600;
+  }
+
+  &__zona {
+    display: flex;
+    align-items: center;
+    gap: var(--mlt-sys-espacio-4);
+  }
+
+  &__navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--mlt-sys-espacio-3);
+  }
+
+  &__enlace {
+    color: var(--cabecera-texto-enlace);
+
+    &:hover {
+      color: var(--mlt-sys-texto);
+    }
+
+    &--activa {
+      color: var(--mlt-sys-color-principal-5);
+      font-weight: 600;
+    }
+  }
+}

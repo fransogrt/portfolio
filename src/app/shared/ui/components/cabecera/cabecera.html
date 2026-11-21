@@ -1,0 +1,17 @@
+<header class="l-cabecera">
+  <a class="l-cabecera__marca" routerLink="/">Francisco Ogallar</a>
+  <div class="l-cabecera__zona">
+    <nav class="l-cabecera__navegacion" aria-label="Navegación principal">
+      @for (enlace of enlaces; track enlace.ruta) {
+        <a
+          class="l-cabecera__enlace"
+          [routerLink]="enlace.ruta"
+          routerLinkActive="l-cabecera__enlace--activa"
+          [routerLinkActiveOptions]="{ exact: enlace.exacta }"
+          >{{ enlace.texto }}</a
+        >
+      }
+    </nav>
+    <app-tema-interruptor />
+  </div>
+</header>

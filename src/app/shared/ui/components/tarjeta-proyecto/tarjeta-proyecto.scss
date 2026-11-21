@@ -1,0 +1,74 @@
+// Tarjeta de proyecto: tokens de diseño + estado privado (BEM) del bloque
+// c-tarjeta, aquí porque la implementación del bloque es este componente
+// (regla «CSS puro O componente Angular, nunca ambos»).
+
+.c-tarjeta {
+  /* Tokens de diseño: decisiones del diseñador */
+  --tarjeta-fondo: var(--mlt-sys-superficie);
+  --tarjeta-borde: var(--mlt-sys-borde);
+  --tarjeta-borde-hover: var(--mlt-sys-color-principal-5);
+  --tarjeta-texto-suave: var(--mlt-sys-texto-suave);
+  --tarjeta-color-etiqueta: var(--mlt-sys-color-principal-5);
+  --tarjeta-padding: var(--mlt-sys-espacio-5);
+  --tarjeta-redondeo: var(--mlt-sys-redondeo-3);
+
+  /* Propiedades CSS: solo tokens */
+  display: flex;
+  flex-direction: column;
+  gap: var(--mlt-sys-espacio-3);
+  padding: var(--tarjeta-padding);
+  border: 1px solid var(--tarjeta-borde);
+  border-radius: var(--tarjeta-redondeo);
+  background-color: var(--tarjeta-fondo);
+  transition: border-color 150ms ease;
+
+  &:hover {
+    border-color: var(--tarjeta-borde-hover);
+  }
+
+  &__cabecera {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--mlt-sys-espacio-3);
+  }
+
+  &__titulo {
+    font-size: var(--mlt-sys-font-size-4);
+    line-height: 1.3;
+  }
+
+  &__enlace {
+    color: inherit;
+
+    &:hover {
+      color: var(--mlt-sys-color-principal-5);
+    }
+  }
+
+  &__estado {
+    color: var(--tarjeta-texto-suave);
+    font-size: var(--mlt-sys-font-size-1);
+    white-space: nowrap;
+  }
+
+  &__texto {
+    color: var(--tarjeta-texto-suave);
+  }
+
+  &__etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mlt-sys-espacio-2);
+    padding: 0;
+    list-style: none;
+  }
+
+  &__etiqueta {
+    padding: var(--mlt-sys-espacio-1) var(--mlt-sys-espacio-2);
+    border: 1px solid var(--tarjeta-borde);
+    border-radius: var(--mlt-sys-redondeo-4);
+    color: var(--tarjeta-color-etiqueta);
+    font-size: var(--mlt-sys-font-size-1);
+  }
+}
